@@ -65,18 +65,8 @@ const PostShare = ({ onPostShare }) => {
     };
 
     if (trendName) {
-      const hasHashtag = trendName.includes("#");
-      if (hasHashtag) {
-        const hashtagIndex = trendName.indexOf("#");
-        const spaceIndex = trendName.indexOf(" ", hashtagIndex);
-        const endIndex = spaceIndex !== -1 ? spaceIndex : trendName.length;
-        setTrendName(trendName.substring(hashtagIndex, endIndex));
-      } else {
-        alert(
-          "Please include a hashtag in your description to create a trend."
-        );
-        return;
-      }
+      const hashtag = trendName.startsWith("#") ? trendName : `#${trendName}`;
+      createOrUpdateTrend(hashtag);
     }
 
     if (image) {
@@ -117,13 +107,16 @@ const PostShare = ({ onPostShare }) => {
 
   const createOrUpdateTrend = async (name) => {
     try {
-      const response = await fetch("/trend", {
+      const response = await fetch("http://localhost:5000/trend", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ name }),
       });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
       const data = await response.json();
       console.log("Trend created:", data);
     } catch (error) {

@@ -11,7 +11,7 @@ const RightSide = ({ postShareTrigger }) => {
   return (
     <div className="RightSide">
       <MynCoin postShareTrigger={postShareTrigger} />
-      <TrendCard />
+      <TrendCard trigger={postShareTrigger} />
       <button className="button r-button" onClick={() => setModalOpened(true)}>
         Share
       </button>
