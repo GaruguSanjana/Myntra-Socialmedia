@@ -101,12 +101,8 @@ const PostShare = ({ onPostShare }) => {
         (order) => order._id !== selectedOrderId
       );
       setOrders(updatedOrders);
-
+      onPostShare();
       resetShare();
-
-      if (onPostShare) {
-        onPostShare();
-      }
 
       if (trendName) {
         createOrUpdateTrend(trendName);
