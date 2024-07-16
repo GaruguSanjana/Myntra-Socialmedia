@@ -15,6 +15,14 @@ const RightSide = ({ postShareTrigger }) => {
       <button className="button r-button" onClick={() => setModalOpened(true)}>
         Share
       </button>
+      <button
+        className="button r-button"
+        onClick={() => {
+          window.location.href = "http://localhost:3000/orders";
+        }}
+      >
+        Create Order
+      </button>
       <ShareModal modalOpened={modalOpened} setModalOpened={setModalOpened} />
     </div>
   );

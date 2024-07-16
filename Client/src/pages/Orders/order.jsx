@@ -1,6 +1,6 @@
-// src/pages/OrderForm.jsx
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "./order.css";
 
@@ -27,7 +27,6 @@ const OrderForm = () => {
       await axios.post("http://localhost:5000/orders", newOrder);
       setSuccess("Order successfully created!");
 
-      // Clear success message after 3 seconds (adjust as needed)
       setTimeout(() => {
         setSuccess(null);
       }, 3000);
@@ -41,13 +40,16 @@ const OrderForm = () => {
 
   return (
     <div className="OrderForm">
+      <Link to="/home" className="back-arrow">
+        &#8592; Back
+      </Link>
       <div className="form-container">
         <h2>
           Create <span className="no">New Order</span>
         </h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="items">Items (comma separated):</label>
+            <label htmlFor="items">Item:</label>
             <input
               type="text"
               id="items"

@@ -17,7 +17,6 @@ const PostShare = ({ onPostShare }) => {
   const [selectedOrderId, setSelectedOrderId] = useState("");
   const [descText, setDescText] = useState("");
   const [trendName, setTrendName] = useState("");
-  const [orderLink, setOrderLink] = useState("");
   const desc = useRef();
   const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
 
@@ -53,19 +52,24 @@ const PostShare = ({ onPostShare }) => {
       return;
     }
 
-    if (!orderLink) {
-      alert("Please provide the order link.");
+    const selectedOrder = orders.find((order) => order._id === selectedOrderId);
+    if (!selectedOrder) {
+      console.error("Selected order not found in fetched orders.");
       return;
     }
+
     const newPost = {
       userId: user._id,
       desc: desc.current.value,
       orderId: selectedOrderId,
-      orderLink: orderLink, // Include the order link
+      orderLink: selectedOrder.orderLink, // Taking orderLink from selectedOrder
     };
 
     if (trendName) {
-      const hashtag = trendName.startsWith("#") ? trendName : `#${trendName}`;
+      const lowercaseTrendName = trendName.toLowerCase();
+      const hashtag = lowercaseTrendName.startsWith("#")
+        ? lowercaseTrendName
+        : `#${lowercaseTrendName}`;
       createOrUpdateTrend(hashtag);
     }
 
@@ -127,7 +131,6 @@ const PostShare = ({ onPostShare }) => {
   const resetShare = () => {
     setImage(null);
     setDescText("");
-    setOrderLink("");
     desc.current.value = "";
     if (orders.length > 0) {
       setSelectedOrderId(orders[0]._id);
@@ -155,10 +158,6 @@ const PostShare = ({ onPostShare }) => {
 
   const handleDescChange = (event) => {
     setDescText(event.target.value);
-  };
-
-  const handleOrderLinkChange = (event) => {
-    setOrderLink(event.target.value);
   };
 
   if (orders.length === 0) {
@@ -200,12 +199,6 @@ const PostShare = ({ onPostShare }) => {
           placeholder="Add a trend (optional, use #)"
           value={trendName}
           onChange={(e) => setTrendName(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Add order link"
-          value={orderLink}
-          onChange={handleOrderLinkChange}
         />
         <select
           className="dropdown"

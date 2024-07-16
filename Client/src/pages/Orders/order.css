@@ -19,6 +19,21 @@
   color: #ff4d6d;
 }
 
+.back-arrow {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.back-arrow:hover {
+  color: #ff7f9d;
+}
+
 .OrderForm h2 {
   margin-bottom: 30px;
   text-align: center;
