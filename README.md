@@ -23,22 +23,22 @@ This project aims to enhance the Myntra website by introducing new features to b
 
 ## Screenshots 📸
 ### Register
-[![Register.png](https://i.postimg.cc/FRmDJw4W/Screenshot-2024-07-16-195401.png)](https://postimg.cc/2qc4sc3h)
+![Screenshot 2024-07-16 195401](https://github.com/user-attachments/assets/dc316f77-0f93-4ee9-810f-c9255a08cf85)
 
 ### Login
-[![Screenshot-2024-07-16-195401.png](https://i.postimg.cc/FRmDJw4W/Screenshot-2024-07-16-195401.png)](https://postimg.cc/2qc4sc3h)
+![Screenshot 2024-07-16 195336](https://github.com/user-attachments/assets/1bcb5496-3c58-4ddd-84f2-407392c13c57)
 
 ### Posts
-[![Screenshot-2024-07-16-195446.png](https://i.postimg.cc/kXZsy2Ct/Screenshot-2024-07-16-195446.png)](https://postimg.cc/ZC86bKCT)
+![Screenshot 2024-07-16 195446](https://github.com/user-attachments/assets/a5553e07-a787-4ee4-b0bb-f8b8fa9ae72a)
 
 ### MynCoin & Trends
-[![Screenshot-2024-07-16-195559.png](https://i.postimg.cc/BQtNDxr0/Screenshot-2024-07-16-195559.png)](https://postimg.cc/56dwWF97)
+![Screenshot 2024-07-16 195559](https://github.com/user-attachments/assets/4c0a965f-9600-4a93-9b8b-3f72ae5498a2)
 
 ### Add Previous Orders
-[![Screenshot-2024-07-16-195704.png](https://i.postimg.cc/T130tmhn/Screenshot-2024-07-16-195704.png)](https://postimg.cc/S2Hcsn6K)
+![Screenshot 2024-07-16 195704](https://github.com/user-attachments/assets/a02267c2-46dd-436e-ab2a-fd5db902a23b)
 
 ### Posting
-[![Screenshot-2024-07-16-200943.png](https://i.postimg.cc/V6QZYdvC/Screenshot-2024-07-16-200943.png)](https://postimg.cc/d76j6Q8s)
+![Screenshot 2024-07-16 200943](https://github.com/user-attachments/assets/5e6a21e0-4bfe-45ea-9a37-5ec583824d05)
 
 ## Demo Video 📽️
 https://github.com/user-attachments/assets/d13d3637-110a-4c4a-bf11-3974f65ea27f
