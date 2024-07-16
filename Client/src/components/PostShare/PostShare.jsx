@@ -167,7 +167,7 @@ const PostShare = ({ onPostShare }) => {
         <span className="no-orders">
           <h4>
             No orders to share yet!{" "}
-            <a href="https://www.myntra.com/">
+            <a href="http://localhost:3000/orders">
               <span>Start shopping</span>
             </a>
           </h4>
